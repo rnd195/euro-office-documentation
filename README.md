@@ -8,22 +8,11 @@ Source for the Euro-Office documentation site, built with
 
 ## Build locally
 
-The fastest path is the Makefile, which bootstraps a `.venv` on first use:
-
 ```bash
-make serve               # live preview at http://127.0.0.1:8000
-make build               # production build into ./site (strict)
-```
+uv sync
 
-If you prefer not to use `make`:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-mkdocs serve
-mkdocs build --strict
+uv run zensical serve
+uv run zensical build --strict
 ```
 
 `--strict` is what CI runs — it fails on broken links, missing pages, and
